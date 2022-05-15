@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <div className="App">
-      App
+      Backlog Manager
       <div className="login-button">
         <button onClick={switchLoginStatus}>{loggedIn ? "Log Out" : "Log In"}</button>
       </div>
