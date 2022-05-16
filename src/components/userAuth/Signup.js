@@ -36,8 +36,10 @@ export default function Signup(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newUser),
-    }).then((res) => {
-      console.log(res)
+    }).then(res => res.json()
+    ).then((data) => {
+      console.log(data)
+      props.loginPage()
     })
   }
 
@@ -47,9 +49,9 @@ export default function Signup(props) {
       <button onClick={() => {props.loginPage()}}>Already a member? Log in</button>
       <div id="sign-up-form">
         <form>
-          <div>Username: <input type="text" name="username" value={newUsername} onChange={handleUsernameChange} /></div>
-          <div>Email: <input type="text" name="email" value={newEmail} onChange={handleEmailChange} /></div>
-          <div>Password: <input type="text" name="password" value={newPassword} onChange={handlePasswordChange} /></div>
+          <div>Username: <input type="text" name="username" id="username-input" value={newUsername} onChange={handleUsernameChange} /></div>
+          <div>Email: <input type="text" name="email" id="email-input" value={newEmail} onChange={handleEmailChange} /></div>
+          <div>Password: <input type="text" name="password" id="password-input" value={newPassword} onChange={handlePasswordChange} /></div>
           <div><button type="submit" onClick={(event) => {handleSubmit(event)}}>Sign Up</button></div>
         </form>
       </div>

@@ -8,7 +8,7 @@ describe("login", () => {
     cy.contains("Log In")
   })
 
-  it("contains a ling to the Sign Up page", () => {
+  it("contains a link to the Sign Up page", () => {
     cy.visit('http://localhost:3000')
     cy.get("#link-to-signup").click()
     cy.contains("Sign Up")
