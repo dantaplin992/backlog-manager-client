@@ -19,4 +19,22 @@ describe("login", () => {
     cy.get('input[name="username-input"]').type("user1")
     cy.get('input[name="password-input"]').type("password123")
   })
+
+  it("allows a user to log in if their credentials are correct", () => {
+    cy.visit('http://localhost:3000')
+    cy.get('input[name="username-input"]').type("a")
+    cy.get('input[name="password-input"]').type("a")
+    cy.get('button[name="login-submit"]').click()
+    cy.contains("A")
+  })
+
+  it("rejects incorrect credentials", () => {
+    cy.visit('http://localhost:3000')
+    cy.get('input[name="username-input"]').type("a")
+    cy.get('input[name="password-input"]').type("b")
+    cy.get('button[name="login-submit"]').click()
+    cy.on('window:alert', (text) => {
+      expect(text).to.contains('The credentials you entered are incorrect');
+    });
+  })
 })
