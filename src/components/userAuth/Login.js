@@ -18,7 +18,7 @@ export default function Login(props) {
     ).then((data) => {
       console.log(data.message)
       if (data.message === "Verified") {
-        props.loginFunction()
+        props.loginFunction(data.user)
       } else {
         alert("The credentials you entered are incorrect")
       }
