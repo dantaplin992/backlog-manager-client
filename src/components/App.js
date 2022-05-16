@@ -4,32 +4,30 @@ import UserAuth from './userAuth/UserAuth'
 import Content from './content/Content'
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState(null)
   const firstRender = useRef(true)
   useEffect(() => {
     firstRender.current = false
   }, [])
 
-  let displayComponent = loggedIn ? <Content currentUser={currentUser} /> : <UserAuth loginFunction={loginUser} />
+  let displayComponent = currentUser ? <Content currentUser={currentUser} logoutFunction={nullUser} /> : <UserAuth loginFunction={loginUser} />
 
   function loginUser(user) {
     setCurrentUser(user)
   }
 
-  function switchLoginStatus() {
-    setLoggedIn(loggedIn ? false : true)
+  function nullUser() {
+    setCurrentUser(null)
   }
 
   useEffect(() => {
-    switchLoginStatus()
+    console.log(currentUser)
   }, [currentUser])
 
   return (
     <div className="App">
       Backlog Manager
       <div className="login-button">
-        <button onClick={switchLoginStatus}>{loggedIn ? "Log Out" : "Log In"}</button>
       </div>
       {displayComponent}
     </div>

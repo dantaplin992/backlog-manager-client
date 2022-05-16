@@ -4,7 +4,8 @@ export default function Content(props) {
   return (
     <div className="Content">
       Content
-      <p>{props.currentUser ? props.currentUser._id : ''}</p>
+      <p>Logged in as {props.currentUser._id}</p>
+      <button name="log-out-button" onClick={() => {props.logoutFunction()}}>Log out</button>
     </div>
   )
 }
