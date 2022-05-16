@@ -61,7 +61,7 @@ export default function Backlog(props) {
   function resultTiles() {
     let tiles = []
     for (let i in searchResults) {
-      tiles.unshift(<p key={i} >{searchResults[i].name}</p>)
+      tiles.unshift(<div><button key={i} >{searchResults[i].name}</button></div>)
     }
     return tiles
   }
