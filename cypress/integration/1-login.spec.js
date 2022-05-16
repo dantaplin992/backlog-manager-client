@@ -13,4 +13,10 @@ describe("login", () => {
     cy.get("#link-to-signup").click()
     cy.contains("Sign Up")
   })
+
+  it("allows a user to enter their credentials", () => {
+    cy.visit('http://localhost:3000')
+    cy.get('input[name="username-input"]').type("user1")
+    cy.get('input[name="password-input"]').type("password123")
+  })
 })

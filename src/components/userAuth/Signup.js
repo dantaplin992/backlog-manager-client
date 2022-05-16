@@ -10,10 +10,6 @@ export default function Signup(props) {
     setNewUsername(event.target.value)
   }
 
-  useEffect(() => {
-    console.log("Username: " + newUsername)
-  }, [newUsername])
-
   function handleEmailChange(event) {
     event.preventDefault()
     setNewEmail(event.target.value)
@@ -46,7 +42,6 @@ export default function Signup(props) {
   return (
     <div className="Signup">
       Sign Up Page
-      <button onClick={() => {props.loginPage()}}>Already a member? Log in</button>
       <div id="sign-up-form">
         <form>
           <div>Username: <input type="text" name="username" id="username-input" value={newUsername} onChange={handleUsernameChange} /></div>
@@ -55,6 +50,7 @@ export default function Signup(props) {
           <div><button type="submit" onClick={(event) => {handleSubmit(event)}}>Sign Up</button></div>
         </form>
       </div>
+      <button onClick={() => {props.loginPage()}}>Already a member? Log in</button>
     </div>
   )
 }

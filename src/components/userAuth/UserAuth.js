@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Login from './Login'
 import Signup from './Signup'
 
-export default function UserAuth() {
+export default function UserAuth(props) {
   const [page, setPage] = useState("login")
 
   function displayPage() {
     if (page === "signup") return <Signup loginPage={changePage}/>
-    return <Login signUpPage={changePage}/>
+    return <Login signUpPage={changePage} loginFunction={props.loginFunction} />
   }
 
   function changePage() {
