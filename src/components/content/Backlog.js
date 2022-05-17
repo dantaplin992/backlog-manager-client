@@ -3,16 +3,12 @@ import equal from 'fast-deep-equal'
 import shortid from 'shortid'
 import NewGameForm from './NewGameForm'
 import GameSearch from './GameSearch'
+import '../../styles/Backlog.css'
+import GameTile from './GameTile'
 
 export default function Backlog(props) {
-  const [newGameTitle, setNewGameTitle] = useState('')
   const [games, setGames] = useState([])
   const [selected, setSelected] = useState(null)
-
-  function handleInput(event) {
-    event.preventDefault()
-    setNewGameTitle(event.target.value)
-  }
 
   function getAllGames() {
     const url = `http://localhost:5000/backlog/all?userid=${props.user._id}`
@@ -53,7 +49,9 @@ export default function Backlog(props) {
   function gameTiles() {
     let tiles = [] 
     for (let i in games) {
-      tiles.unshift(<p key={shortid.generate()}>{games[i].name}</p>)
+      tiles.unshift(
+        <GameTile game={games[i]} key={shortid.generate()} />
+      )
     }
     return tiles
   }

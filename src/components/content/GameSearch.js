@@ -33,6 +33,9 @@ export default function GameSearch(props) {
   return (
     <div className="GameSearch">
       <div>
+        <h3>Add Game</h3>
+      </div>
+      <div>
         <input type="text" name="rawg-search" onChange={handleGameSearch} value={gameSearch}/>
       </div>
       {resultTiles()}

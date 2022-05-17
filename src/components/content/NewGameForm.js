@@ -33,7 +33,6 @@ export default function NewGameForm(props) {
 
   return (
     <div className="NewGameForm">
-      <strong>Add Game</strong>
       <div>{props.game.name}</div>
       <div>{props.game.released.split("-")[0]}</div>
       {platformDropDown()}
