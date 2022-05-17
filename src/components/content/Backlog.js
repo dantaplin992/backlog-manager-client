@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import equal from 'fast-deep-equal'
-import shortid from 'shortid'
-import NewGameForm from './NewGameForm'
-import GameSearch from './GameSearch'
-import '../../styles/Backlog.css'
-import GameTile from './GameTile'
+import Queue from './Queue'
+import CurrentlyPlaying from './CurrentlyPlaying'
+import Completed from './Completed'
 
 export default function Backlog(props) {
   const [games, setGames] = useState([])
@@ -21,7 +19,7 @@ export default function Backlog(props) {
     }).then(response => response.json()
     ).then((data) => {
       console.log("GOT GAMES")
-      if (!equal(games, data[0].games)) setGames(data[0].games)
+      if (!equal(games, data[0])) setGames(data[0])
     })
   }
 
@@ -46,20 +44,6 @@ export default function Backlog(props) {
     })
   }
 
-  function gameTiles() {
-    let tiles = [] 
-    for (let i in games) {
-      tiles.unshift(
-        <GameTile game={games[i]} key={shortid.generate()} />
-      )
-    }
-    return tiles
-  }
-
-  function addSelected(selected) {
-    setSelected(selected)
-  }
-
   useEffect(() => {
     if (selected) console.log('Selected new game: ' + selected.name)
   }, [selected])
@@ -67,9 +51,10 @@ export default function Backlog(props) {
   return (
     <div className="Backlog">
       <h2>My Backlog</h2>
-      {gameTiles()}
-      {selected ? <NewGameForm game={selected} addGameToBacklog={addGameToBacklog}/> : <div></div>}
-      <GameSearch selectGame={addSelected} />
+      <Queue games={games.queued} addGameToBacklog={addGameToBacklog} refreshGames={getAllGames} user={props.user} />
+      <CurrentlyPlaying games={games.currentlyPlaying} />
+      <Completed games={games.finished} />
+      
     </div>
   )
 }

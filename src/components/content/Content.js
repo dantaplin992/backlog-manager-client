@@ -4,9 +4,11 @@ import Backlog from './Backlog'
 export default function Content(props) {
   return (
     <div className="Content">
-      <p>Logged in as {props.currentUser.username}</p>
+      <span>Logged in as {props.currentUser.username}</span>
       <button name="log-out-button" onClick={() => {props.logoutFunction()}}>Log out</button>
-      <Backlog user={props.currentUser} />
+      <div className="columns">
+        <Backlog user={props.currentUser} />
+      </div>
     </div>
   )
 }

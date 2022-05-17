@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.columns {
+  height: 100%;
+}
+
+.Queue, .Completed, .CurrentlyPlaying {
+  float: left;
+  width: 33%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+.CurrentlyPlaying {
+  width: 34% !important;
+}
+
+.GameSearch {
+  margin-bottom: 10rem;
+}

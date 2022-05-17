@@ -3,7 +3,7 @@
   background-color: rgb(25, 25, 192);
   margin-bottom: 1rem;
   color: rgb(223, 223, 223);
-  width: 25%;
+  width: 75%;
   margin-right: auto;
   margin-left: auto;
   border: none;
@@ -13,8 +13,46 @@
   animation-duration: 1s;
 }
 
+.tile-button {
+  display: none;
+}
+
 .game-tile:hover {
   background-color: rgb(74, 74, 208);
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  transition: all .2s linear;
+}
+
+.game-tile:hover .tile-button {
+  display: inline-block;
+  transition: all .5s linear;
+}
+
+.current-tile {
+  padding: 1rem;
+  background-color: goldenrod;
+  margin-bottom: 1rem;
+  color: rgb(223, 223, 223);
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  border: none;
+  border-radius: 17px;
+  box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.current-tile:hover {
+  background-color: rgb(229, 179, 54);
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  transition: all .2s linear;
+}
+
+.current-tile:hover .tile-button {
+  display: inline-block;
 }
 
 .title {
@@ -37,3 +75,4 @@
   from {opacity: 0%;}
   to {opacity: 100%;}
 }
+
