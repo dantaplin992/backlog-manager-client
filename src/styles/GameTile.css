@@ -13,6 +13,10 @@
   animation-duration: 1s;
 }
 
+.game-tile:hover {
+  background-color: rgb(74, 74, 208);
+}
+
 .title {
   font-size: large;
   font-weight: 500;
