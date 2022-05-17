@@ -52,7 +52,7 @@ export default function Backlog(props) {
     <div className="Backlog">
       <h2>My Backlog</h2>
       <Queue games={games.queued} addGameToBacklog={addGameToBacklog} refreshGames={getAllGames} user={props.user} />
-      <CurrentlyPlaying games={games.currentlyPlaying} />
+      <CurrentlyPlaying games={games.currentlyPlaying} refreshGames={getAllGames} user={props.user} />
       <Completed games={games.finished} />
       
     </div>

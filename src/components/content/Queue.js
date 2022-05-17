@@ -61,11 +61,18 @@ export default function Queue(props) {
     })
   }
 
+  
+
   function gameTiles() {
     let tiles = [] 
     for (let i in props.games) {
       tiles.unshift(
-        <GameTile game={props.games[i]} key={shortid.generate()} removeFunction={removeFromBacklog} startGame={startPlaying} />
+        <GameTile 
+          game={props.games[i]} 
+          key={shortid.generate()} 
+          removeFunction={removeFromBacklog} 
+          startGame={startPlaying}
+        />
       )
     }
     return tiles

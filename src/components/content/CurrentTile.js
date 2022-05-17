@@ -15,7 +15,7 @@ export default function CurrentTile(props) {
       </div>
       <button className="tile-button">Review / Finish</button>
       <button className="tile-button">Abandon</button>
-      <button className="tile-button">Play Later</button>
+      <button className="tile-button" onClick={() => {props.playLater(props.game)}}>Play Later</button>
     </div>
   )
 }
