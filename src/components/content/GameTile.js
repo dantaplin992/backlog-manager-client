@@ -14,7 +14,7 @@ return (
       {props.game.platform}
     </div>
     <button className="tile-button" onClick={() => {props.removeFunction(props.game)}}>Remove</button>
-    <button className="tile-button">Start Playing</button>
+    <button className="tile-button" onClick={() => {props.startGame(props.game)}}>Start Playing</button>
   </div>
 )
 }

@@ -12,10 +12,6 @@ export default function Queue(props) {
     setSelected(selected)
   }
 
-  function addSelectedGame(game) {
-    props.addGameToBacklog(game)
-  }
-
   function addGameToBacklog(newGame) {
     const sendObj = { userId: props.user._id, game: newGame }
     const url = `http://localhost:5000/backlog/add`
@@ -49,11 +45,27 @@ export default function Queue(props) {
     })
   }
 
+  function startPlaying(gameObj) {
+    const sendObj = { userId: props.user._id, game: gameObj }
+    const url = `http://localhost:5000/backlog/start_playing`
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(sendObj)
+    }).then(() => {
+      props.refreshGames()
+      console.log("Started playing " + gameObj.name)
+    })
+  }
+
   function gameTiles() {
     let tiles = [] 
     for (let i in props.games) {
       tiles.unshift(
-        <GameTile game={props.games[i]} key={shortid.generate()} removeFunction={removeFromBacklog} />
+        <GameTile game={props.games[i]} key={shortid.generate()} removeFunction={removeFromBacklog} startGame={startPlaying} />
       )
     }
     return tiles
