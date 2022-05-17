@@ -23,7 +23,7 @@ export default function GameSearch(props) {
     event.preventDefault()
     setGameSearch(event.target.value)
     if(event.target.value) {
-      let url = `https://api.rawg.io/api/games?key=0a510db17ca94d949b927e45c32f02c0&search=${event.target.value}&page_size=5`
+      let url = `https://api.rawg.io/api/games?key=0a510db17ca94d949b927e45c32f02c0&search=${event.target.value}&page_size=10`
       fetch(url).then(result => result.json()).then((data) => {setSearchResults(data.results)})
     } else {
       setSearchResults([])
