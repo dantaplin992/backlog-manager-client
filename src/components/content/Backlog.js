@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import equal from 'fast-deep-equal'
 import shortid from 'shortid'
 import NewGameForm from './NewGameForm'
+import GameSearch from './GameSearch'
 
 export default function Backlog(props) {
   const [newGameTitle, setNewGameTitle] = useState('')
   const [games, setGames] = useState([])
-  const [gameSearch, setGameSearch] = useState('')
-  const [searchResults, setSearchResults] = useState([])
+  const [selected, setSelected] = useState(null)
 
   function handleInput(event) {
     event.preventDefault()
@@ -58,38 +58,20 @@ export default function Backlog(props) {
     return tiles
   }
 
-  function resultTiles() {
-    let tiles = []
-    for (let i in searchResults) {
-      tiles.unshift(<div><button key={i} >{searchResults[i].name}</button></div>)
-    }
-    return tiles
+  function addSelected(selected) {
+    setSelected(selected)
   }
 
-  // useEffect(() => {
-  //   console.log(searchResults)
-  // }, [searchResults])
-
-  function handleGameSearch(event) {
-    event.preventDefault()
-    setGameSearch(event.target.value)
-    if(event.target.value) {
-      let url = `https://api.rawg.io/api/games?key=0a510db17ca94d949b927e45c32f02c0&search=${event.target.value}&page_size=5`
-      fetch(url).then(result => result.json()).then((data) => {setSearchResults(data.results)})
-    } else {
-      setSearchResults([])
-    }
-  }
+  useEffect(() => {
+    if (selected) console.log('Selected new game: ' + selected.name)
+  }, [selected])
 
   return (
     <div className="Backlog">
-      My Backlog
-      <NewGameForm inputChange={handleInput} submitFunction={addGameToBacklog} text={newGameTitle} />
+      <h2>My Backlog</h2>
       {gameTiles()}
-      <div className="search-form">
-        <input type="text" name="rawg-search" onChange={handleGameSearch} />
-      </div>
-      {resultTiles()}
+      {selected ? <NewGameForm game={selected} /> : <div></div>}
+      <GameSearch selectGame={addSelected} />
     </div>
   )
 }
