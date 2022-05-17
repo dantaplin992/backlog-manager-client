@@ -4,10 +4,17 @@ export default function GameSearch(props) {
   const [gameSearch, setGameSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
 
+  function selectOption(option) {
+    props.selectGame(option)
+    setGameSearch('')
+    setSearchResults([])
+    resultTiles()
+  }
+
   function resultTiles() {
     let tiles = []
     for (let i in searchResults) {
-      tiles.unshift(<div><button key={i} onClick={() => {props.selectGame(searchResults[i])}}>{searchResults[i].name}</button></div>)
+      tiles.unshift(<div><button key={i} onClick={() => {selectOption(searchResults[i])}}>{searchResults[i].name}</button></div>)
     }
     return tiles
   }
@@ -26,7 +33,7 @@ export default function GameSearch(props) {
   return (
     <div className="GameSearch">
       <div>
-        <input type="text" name="rawg-search" onChange={handleGameSearch} />
+        <input type="text" name="rawg-search" onChange={handleGameSearch} value={gameSearch}/>
       </div>
       {resultTiles()}
     </div>

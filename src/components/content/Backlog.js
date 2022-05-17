@@ -24,25 +24,8 @@ export default function Backlog(props) {
       },
     }).then(response => response.json()
     ).then((data) => {
-      if(!equal(games, data[0].games)) setGames(data[0].games)
-    })
-  }
-
-  function addGameToBacklog(event) {
-    event.preventDefault()
-    const newGame = { userId: props.user._id, title: newGameTitle }
-    const url = `http://localhost:5000/backlog/add`
-    fetch(url, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newGame)
-    }).then(response => response.json()
-    ).then((data) => {
-      getAllGames()
-      setNewGameTitle('')
+      console.log("GOT GAMES")
+      if (!equal(games, data[0].games)) setGames(data[0].games)
     })
   }
 
@@ -50,10 +33,27 @@ export default function Backlog(props) {
     getAllGames()
   }, [games])
 
+  function addGameToBacklog(newGame) {
+    const sendObj = { userId: props.user._id, game: newGame }
+    const url = `http://localhost:5000/backlog/add`
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(sendObj)
+    }).then(() => {
+      getAllGames()
+      console.log("Added to Backlog")
+      setSelected(null)
+    })
+  }
+
   function gameTiles() {
     let tiles = [] 
     for (let i in games) {
-      tiles.unshift(<p key={shortid.generate()}>{games[i].title}</p>)
+      tiles.unshift(<p key={shortid.generate()}>{games[i].name}</p>)
     }
     return tiles
   }
@@ -70,7 +70,7 @@ export default function Backlog(props) {
     <div className="Backlog">
       <h2>My Backlog</h2>
       {gameTiles()}
-      {selected ? <NewGameForm game={selected} /> : <div></div>}
+      {selected ? <NewGameForm game={selected} addGameToBacklog={addGameToBacklog}/> : <div></div>}
       <GameSearch selectGame={addSelected} />
     </div>
   )
