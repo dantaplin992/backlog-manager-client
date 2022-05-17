@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import SearchResultTile from './SearchResultTile'
 
 export default function GameSearch(props) {
   const [gameSearch, setGameSearch] = useState('')
@@ -14,7 +15,7 @@ export default function GameSearch(props) {
   function resultTiles() {
     let tiles = []
     for (let i in searchResults) {
-      tiles.unshift(<div><button key={i} onClick={() => {selectOption(searchResults[i])}}>{searchResults[i].name}</button></div>)
+      tiles.unshift(<SearchResultTile result={searchResults[i]} selectOption={selectOption} key={i} />)
     }
     return tiles
   }
@@ -24,7 +25,10 @@ export default function GameSearch(props) {
     setGameSearch(event.target.value)
     if(event.target.value) {
       let url = `https://api.rawg.io/api/games?key=0a510db17ca94d949b927e45c32f02c0&search=${event.target.value}&page_size=10`
-      fetch(url).then(result => result.json()).then((data) => {setSearchResults(data.results)})
+      fetch(url).then(result => result.json()
+      ).then((data) => {
+        setSearchResults(data.results)
+      })
     } else {
       setSearchResults([])
     }
@@ -36,9 +40,11 @@ export default function GameSearch(props) {
         <h3>Add Game</h3>
       </div>
       <div>
-        <input type="text" name="rawg-search" onChange={handleGameSearch} value={gameSearch}/>
+        <input type="text" id="rawg-search" onChange={handleGameSearch} value={gameSearch}/>
       </div>
-      {resultTiles()}
+      <div>
+        {resultTiles()}
+      </div>
     </div>
   )
   

@@ -37,6 +37,13 @@
   }
 }
 
+.Banner {
+  width: 100%;
+  background-color: rgb(42, 6, 53);
+  color: whitesmoke;
+  margin-top: -1.5rem;
+}
+
 .columns {
   height: 100%;
 }
@@ -56,4 +63,15 @@
 
 .GameSearch {
   margin-bottom: 10rem;
+}
+
+.search-results-shadow {
+  box-shadow: 0px 0px 8px 2px rgb(219, 219, 219);
+}
+
+#rawg-search {
+  width: 75%;
+  height: 1.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
 }

@@ -1,0 +1,25 @@
+.result-button {
+  background-color: white;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+}
+
+.result-button:hover {
+  background-color: rgb(225, 225, 225);
+  transition: all .3s linear;
+}
+
+.release-date {
+  font-size:x-small;
+  font-weight: 300;
+  margin-bottom: 0.2rem;
+}
+
+.platforms {
+  font-size:x-small;
+  font-weight: 300;
+  margin-bottom: 0.2rem;
+  margin-top: 0.4rem;
+  color: grey;
+}

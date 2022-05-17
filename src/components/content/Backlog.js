@@ -25,6 +25,7 @@ export default function Backlog(props) {
 
   useEffect(() => {
     getAllGames()
+    console.log("Getting games")
   }, [games])
 
   function addGameToBacklog(newGame) {
@@ -54,7 +55,6 @@ export default function Backlog(props) {
       <Queue games={games.queued} addGameToBacklog={addGameToBacklog} refreshGames={getAllGames} user={props.user} />
       <CurrentlyPlaying games={games.currentlyPlaying} refreshGames={getAllGames} user={props.user} />
       <Completed games={games.finished} />
-      
     </div>
   )
 }

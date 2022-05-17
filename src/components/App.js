@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import '../styles/App.css'
 import UserAuth from './userAuth/UserAuth'
 import Content from './content/Content'
+import Banner from './Banner'
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -26,7 +27,7 @@ export default function App() {
 
   return (
     <div className="App">
-      Backlog Manager
+      <Banner />
       <div className="login-button">
       </div>
       {displayComponent}
