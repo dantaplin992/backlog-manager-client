@@ -37,6 +37,16 @@
   }
 }
 
+@keyframes fade-in {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
+}
+
+.Content {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+}
+
 .Banner {
   width: 100%;
   background-color: rgb(42, 6, 53);

@@ -3,6 +3,7 @@ import '../styles/App.css'
 import UserAuth from './userAuth/UserAuth'
 import Banner from './Banner'
 import Backlog from './content/Backlog'
+import Content from './content/Content'
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -12,7 +13,7 @@ export default function App() {
     firstRender.current = false
   }, [])
 
-  let displayComponent = currentUser ? <Backlog user={currentUser} /> : <UserAuth loginFunction={loginUser} />
+  let displayComponent = currentUser ? <Content currentUser={currentUser} /> : <UserAuth loginFunction={loginUser} />
 
   function loginUser(user) {
     setCurrentUser(user)
