@@ -121,6 +121,7 @@
   vertical-align: middle;
   margin-top: 0.5rem;
   font-size: small;
+  box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.3);
 }
 
 .completion-status-abandoned {
@@ -133,7 +134,7 @@
   vertical-align: middle;
   margin-top: 0.5rem;
   font-size: small;
-  box-shadow: 0px 0px 8px 0.5px rgb(33, 112, 13);;
+  box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.3);
 }
 
 .review-box-hidden {
