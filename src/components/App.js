@@ -30,8 +30,6 @@ export default function App() {
   return (
     <div className="App">
       <Banner user={currentUser}/>
-      <div className="login-button">
-      </div>
       {displayComponent}
     </div>
   )

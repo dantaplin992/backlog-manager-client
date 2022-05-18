@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import '../../styles/UserAuth.css'
 
 export default function Signup(props) {
   const [newUsername, setNewUsername] = useState('')
@@ -43,13 +44,13 @@ export default function Signup(props) {
     <div className="Signup">
       <div id="sign-up-form">
         <form>
-          <div>Username: <input type="text" name="username" id="username-input" value={newUsername} onChange={handleUsernameChange} /></div>
-          <div>Email: <input type="text" name="email" id="email-input" value={newEmail} onChange={handleEmailChange} /></div>
-          <div>Password: <input type="text" name="password" id="password-input" value={newPassword} onChange={handlePasswordChange} /></div>
-          <div><button type="submit" onClick={(event) => {handleSubmit(event)}}>Sign Up</button></div>
+          <div><input type="text" className="login-input" name="username" id="username-input" value={newUsername} onChange={handleUsernameChange} placeholder="Username"/></div>
+          <div><input type="text" className="login-input" name="email" id="email-input" value={newEmail} onChange={handleEmailChange} placeholder="Email"/></div>
+          <div><input type="text" className="login-input" name="password" id="password-input" value={newPassword} onChange={handlePasswordChange} placeholder="password"/></div>
+          <div><button className="login-button" type="submit" onClick={(event) => {handleSubmit(event)}}>Sign Up</button></div>
         </form>
+      <button className="auth-link" onClick={() => {props.loginPage()}}>Already a member? Log in</button>
       </div>
-      <button onClick={() => {props.loginPage()}}>Already a member? Log in</button>
     </div>
   )
 }

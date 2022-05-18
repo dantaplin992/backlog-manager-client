@@ -1,4 +1,4 @@
-#login-form {
+#login-form, #sign-up-form {
   animation-name: fade-in;
   animation-duration: 0.5s;
   width: 33%;
@@ -19,4 +19,27 @@
   border-radius: 3px;
   font-size: medium;
   padding: 6px;
+}
+
+.login-button {
+  width: 53%;
+  padding: 8px;
+  border: none;
+  background-color: rgb(51, 28, 53);
+  color: whitesmoke;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-button:hover {
+  background-color: rgb(93, 49, 98);
+}
+
+.auth-link {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.auth-link:hover {
+  color: grey;
 }

@@ -41,8 +41,8 @@ export default function Login(props) {
       <div id="login-form">
         <div><input type="text" name="username-input" className="login-input" value={usernameInput} onChange={handleUsernameChange} placeholder="Username"/></div>
         <div><input type="password" name="password-input" className="login-input" value={passwordInput} onChange={handlePasswordChange} placeholder="Password"/></div>
-        <div><button type="submit" name="login-submit" onClick={handleSubmit}>Log in</button></div>
-        <button onClick={() => {props.signUpPage()}} id="link-to-signup">Not a member? Sign Up</button>
+        <div><button className="login-button" type="submit" name="login-submit" onClick={handleSubmit}>Log in</button></div>
+        <button className="auth-link" onClick={() => {props.signUpPage()}} id="link-to-signup">Not a member? Sign Up</button>
       </div>
     </div>
   )
