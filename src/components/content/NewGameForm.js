@@ -20,6 +20,7 @@ export default function NewGameForm(props) {
 
     return (
       <div className="platform-buttons">
+        <div className="form-prompt">Choose platform:</div>
         {options}
       </div>
     )
@@ -38,6 +39,7 @@ export default function NewGameForm(props) {
 
     return (
       <div className="play-reason-buttons">
+        <div className="form-prompt">Choose type:</div>
         {buttons}
       </div>
     )
@@ -66,7 +68,9 @@ export default function NewGameForm(props) {
     <div className="NewGameForm">
       <div className="form-title">{props.game.name}</div>
       <div className="form-date">{props.game.released ? props.game.released.split("-")[0] : "N/A"}</div>
+      
       {platformButtons()}
+      
       {playReasonButtons()}
       <div><button className="add-game-button" name="add-game-button" onClick={addToBacklog}>Add To Backlog</button></div>
     </div>

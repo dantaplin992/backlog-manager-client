@@ -34,8 +34,12 @@ export default function CurrentTile(props) {
         <button className="tile-button" onClick={() => {props.playLater(props.game)}}>Play Later</button>
       </div>
       <div className={reviewing ? "review-box-display" : "review-box-hidden"}>
-        <textarea onChange={handleReviewChange} className="review-textarea" value={reviewText}></textarea>
-        <button onClick={() => {props.review(props.game, reviewText)}}>Submit Review</button>
+        <div>
+          <textarea onChange={handleReviewChange} className="review-textarea" value={reviewText} placeholder={"Review " + props.game.name}></textarea>
+        </div>
+        <div>
+          <button className="submit-review-button" onClick={() => {props.review(props.game, reviewText)}}>Submit Review</button>
+        </div>
       </div>
     </div>
   )

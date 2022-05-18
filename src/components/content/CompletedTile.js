@@ -3,6 +3,16 @@ import '../../styles/GameTile.css'
 
 export default function CompletedTile(props) {
 
+  function reviewLineBreaks() {
+    const broken = props.game.review.split('\n'). map((line, i) => (
+      <span key={i}>
+      {line}
+      <br/>
+      </span>
+      ))
+      return broken
+  }
+
   return (
     <div className={props.game.completionStatus === "Completed" ? "completed-tile" : "abandoned-tile"}>
       <div className="title">
@@ -21,7 +31,7 @@ export default function CompletedTile(props) {
         {props.game.completionStatus}
       </div>
       <div className="review-text-container">
-        {props.game.review}
+        {props.game.review ? reviewLineBreaks() : 'No Review'}
       </div>
     </div>
   )

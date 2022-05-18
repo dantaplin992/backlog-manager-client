@@ -15,7 +15,7 @@ export default function GameSearch(props) {
   function resultTiles() {
     let tiles = []
     for (let i in searchResults) {
-      tiles.unshift(<SearchResultTile result={searchResults[i]} selectOption={selectOption} key={i} />)
+      tiles.push(<SearchResultTile result={searchResults[i]} selectOption={selectOption} key={i} />)
     }
     return tiles
   }
@@ -40,7 +40,7 @@ export default function GameSearch(props) {
         <h3>Add Game</h3>
       </div>
       <div>
-        <input type="text" id="rawg-search" onChange={handleGameSearch} value={gameSearch}/>
+        <input type="text" id="rawg-search" onChange={handleGameSearch} value={gameSearch} placeholder="Search games"/>
       </div>
       <div>
         {resultTiles()}

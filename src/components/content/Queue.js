@@ -62,23 +62,36 @@ export default function Queue(props) {
   }
 
   function gameTiles() {
-    let tiles = [] 
-    for (let i in props.games) {
-      tiles.unshift(
-        <GameTile 
-          game={props.games[i]} 
-          key={shortid.generate()} 
-          removeFunction={removeFromBacklog} 
-          startGame={startPlaying}
-        />
+    if (props.games.length > 0) {
+      let tiles = [] 
+      for (let i in props.games) {
+        tiles.unshift(
+          <GameTile 
+            game={props.games[i]} 
+            key={shortid.generate()} 
+            removeFunction={removeFromBacklog} 
+            startGame={startPlaying}
+          />
+        )
+      }
+      return tiles
+    } else {
+      return (
+        <span className="number-of-items">Nothing here yet - add some games to get started!</span>
       )
     }
-    return tiles
+    
+  }
+
+  function noGamesMessage() {
+    return (
+      <span><strong>Nothing yet - add some games to get started!</strong></span>
+    )
   }
 
   return (
     <div className="Queue">
-      {gameTiles()}
+      {props.games ? gameTiles() : ''}
       {selected ? <NewGameForm game={selected} addGameToBacklog={addGameToBacklog}/> : <div></div>}
       <GameSearch selectGame={addSelected} />
     </div>

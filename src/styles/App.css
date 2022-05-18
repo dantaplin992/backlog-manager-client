@@ -93,3 +93,9 @@
   float: left;
   width: 33.3%
 }
+
+.number-of-items {
+  font-size: medium;
+  font-weight: 300;
+  color: grey;
+}
