@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import '../../styles/UserAuth.css'
 
 export default function Login(props) {
   const [usernameInput, setUsernameInput] = useState('')
@@ -37,13 +38,12 @@ export default function Login(props) {
   
   return (
     <div className="Login">
-      Log In Page
       <div id="login-form">
-        <div>Username: <input type="text" name="username-input" value={usernameInput} onChange={handleUsernameChange} /></div>
-        <div>Password: <input type="password" name="password-input" value={passwordInput} onChange={handlePasswordChange} /></div>
+        <div><input type="text" name="username-input" className="login-input" value={usernameInput} onChange={handleUsernameChange} placeholder="Username"/></div>
+        <div><input type="password" name="password-input" className="login-input" value={passwordInput} onChange={handlePasswordChange} placeholder="Password"/></div>
         <div><button type="submit" name="login-submit" onClick={handleSubmit}>Log in</button></div>
+        <button onClick={() => {props.signUpPage()}} id="link-to-signup">Not a member? Sign Up</button>
       </div>
-      <button onClick={() => {props.signUpPage()}} id="link-to-signup">Not a member? Sign Up</button>
     </div>
   )
 }

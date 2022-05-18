@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login'
 import Signup from './Signup'
+import '../../styles/UserAuth.css'
 
 export default function UserAuth(props) {
   const [page, setPage] = useState("login")
@@ -16,7 +17,6 @@ export default function UserAuth(props) {
 
   return (
     <div className="UserAuth">
-      UserAuth
       {displayPage()}
     </div>
   )

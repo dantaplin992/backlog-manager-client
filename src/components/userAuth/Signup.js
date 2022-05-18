@@ -41,7 +41,6 @@ export default function Signup(props) {
 
   return (
     <div className="Signup">
-      Sign Up Page
       <div id="sign-up-form">
         <form>
           <div>Username: <input type="text" name="username" id="username-input" value={newUsername} onChange={handleUsernameChange} /></div>

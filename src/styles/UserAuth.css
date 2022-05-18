@@ -1,0 +1,22 @@
+#login-form {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  width: 33%;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 2rem;
+  border: 1px solid rgba(186, 186, 186, 0.618);
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0.5px rgba(119, 119, 119, 0.2);
+}
+
+.login-input {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 1.5rem;
+  width: 50%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: medium;
+  padding: 6px;
+}
