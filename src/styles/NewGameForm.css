@@ -1,0 +1,44 @@
+.NewGameForm {
+background-color: white;
+padding: 5px;
+padding-top: 1rem;
+padding-bottom: 1rem;
+box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.02);
+}
+
+.platform-buttons {
+  margin-top: 1rem;
+}
+
+.play-reason-buttons {
+  margin-top: 1rem;
+}
+
+.reason-button-off, .platform-button-off {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 4px;
+  margin-right: 2px;
+}
+
+.reason-button-off:hover, .platform-button-off:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 4px;
+  margin-right: 2px;
+}
+
+.reason-button-on {
+  background-color: rgb(151, 183, 231);
+  border: none;
+  border-radius: 4px;
+  margin-right: 2px;
+}
+
+.platform-button-on {
+  background-color: rgb(9, 24, 47);
+  color: whitesmoke;
+  border: none;
+  border-radius: 4px;
+  margin-right: 2px;
+}

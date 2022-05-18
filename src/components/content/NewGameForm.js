@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import '../../styles/NewGameForm.css'
 
 export default function NewGameForm(props) {
   const [platform, setPlatform] = useState(props.game.platforms[0].platform.name)
-  const [playReason, setPlayReason] = useState('First Playthorugh')
+  const [playReason, setPlayReason] = useState('First Play')
 
   function platformButtons() {
     let options = []
@@ -10,6 +11,7 @@ export default function NewGameForm(props) {
       options.push(
         <button 
         onClick={() => {setPlatform(props.game.platforms[i].platform.name)}}
+        className={platform === props.game.platforms[i].platform.name ? "platform-button-on" : "platform-button-off"}
         >
           {props.game.platforms[i].platform.name}
         </button>
@@ -30,7 +32,7 @@ export default function NewGameForm(props) {
 
     for (let i in playReasons) {
       buttons.push(
-        <button className="reason-button-off" onClick={() => {setPlayReason(playReasons[i])}}>{playReasons[i]}</button>
+        <button className={playReason === playReasons[i] ? "reason-button-on" : "reason-button-off"} onClick={() => {setPlayReason(playReasons[i])}}>{playReasons[i]}</button>
       )
     }
 

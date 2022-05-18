@@ -9,16 +9,22 @@
   border: none;
   border-radius: 17px;
   box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
-  animation-name: fade-in;
-  animation-duration: 1s;
 }
 
 .tile-button {
+  background-color: rgba(0, 0, 0, 0);
+  color: whitesmoke;
+  border: none;
+  border-radius: 4px;
   display: none;
 }
 
+.tile-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .game-tile:hover {
-  background-color: rgb(74, 74, 208);
+  background-image: linear-gradient(rgb(25, 25, 192), rgb(99, 99, 194));
   padding-bottom: 2rem;
   padding-top: 1rem;
   transition: all .2s linear;
@@ -26,7 +32,6 @@
 
 .game-tile:hover .tile-button {
   display: inline-block;
-  transition: all .5s linear;
 }
 
 .current-tile {
@@ -40,12 +45,10 @@
   border: none;
   border-radius: 17px;
   box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
-  animation-name: fade-in;
-  animation-duration: 1s;
 }
 
 .current-tile:hover {
-  background-color: rgb(229, 179, 54);
+  background-image: linear-gradient(goldenrod, rgb(167, 123, 14));
   padding-bottom: 2rem;
   padding-top: 1rem;
   transition: all .2s linear;
@@ -66,8 +69,6 @@
   border: none;
   border-radius: 17px;
   box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
-  animation-name: fade-in;
-  animation-duration: 1s;
 }
 
 .completed-tile:hover {
@@ -128,6 +129,19 @@
   width: 32%;
   margin: auto;
   background-color: rgb(194, 59, 59);
+  border: none;
+  border-radius: 6px;
+  padding: 1px;
+  vertical-align: middle;
+  margin-top: 0.5rem;
+  font-size: small;
+  box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.completion-status-completed {
+  width: 32%;
+  margin: auto;
+  background-color: rgb(79, 182, 54);;
   border: none;
   border-radius: 6px;
   padding: 1px;

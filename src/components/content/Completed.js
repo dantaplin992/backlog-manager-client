@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import CompletedTile from './CompletedTile.js'
 import shortid from "shortid"
 

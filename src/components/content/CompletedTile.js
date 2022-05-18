@@ -17,7 +17,7 @@ export default function CompletedTile(props) {
       <div className="reason-badge">
         {props.game.playReason}
       </div>
-      <div className="completion-status-abandoned">
+      <div className={props.game.completionStatus === "Completed" ? "completion-status-completed" : "completion-status-abandoned"}>
         {props.game.completionStatus}
       </div>
       <div className="review-text-container">
