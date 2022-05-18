@@ -70,6 +70,22 @@
   animation-duration: 1s;
 }
 
+.completed-tile:hover {
+  background-color: rgb(68, 155, 46);
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  transition: all .2s linear;
+}
+
+.review-text-container {
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.completed-tile:hover .review-text-container {
+  display: inline-block;
+}
+
 .title {
   font-size: large;
   font-weight: 500;
@@ -117,4 +133,19 @@
   vertical-align: middle;
   margin-top: 0.5rem;
   font-size: small;
+  box-shadow: 0px 0px 8px 0.5px rgb(33, 112, 13);;
+}
+
+.review-box-hidden {
+  display: none;
+}
+
+.review-box-display {
+  display: inline-block;
+}
+
+.review-textarea {
+  resize: vertical;
+  border: 1px grey;
+  border-radius: 2px;
 }

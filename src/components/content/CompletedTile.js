@@ -20,6 +20,9 @@ export default function CompletedTile(props) {
       <div className="completion-status-abandoned">
         {props.game.completionStatus}
       </div>
+      <div className="review-text-container">
+        {props.game.review}
+      </div>
     </div>
   )
   
