@@ -13,8 +13,13 @@ return (
     <div className="platform">
       {props.game.platform}
     </div>
-    <button className="tile-button" onClick={() => {props.removeFunction(props.game)}}>Remove</button>
-    <button className="tile-button" onClick={() => {props.startGame(props.game)}}>Start Playing</button>
+    <div className="reason-badge">
+      {props.game.playReason}
+    </div>
+    <div className="action-buttons">
+      <button className="tile-button" onClick={() => {props.removeFunction(props.game)}}>Remove</button>
+      <button className="tile-button" onClick={() => {props.startGame(props.game)}}>Start Playing</button>
+    </div>
   </div>
 )
 }

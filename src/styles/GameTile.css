@@ -91,3 +91,30 @@
   to {opacity: 100%;}
 }
 
+.action-buttons {
+  margin-top: 0.5rem;
+}
+
+.reason-badge {
+  width: 32%;
+  margin: auto;
+  background-color: rgb(59, 115, 194);
+  border: none;
+  border-radius: 6px;
+  padding: 1px;
+  vertical-align: middle;
+  margin-top: 0.5rem;
+  font-size: small;
+}
+
+.completion-status-abandoned {
+  width: 32%;
+  margin: auto;
+  background-color: rgb(194, 59, 59);
+  border: none;
+  border-radius: 6px;
+  padding: 1px;
+  vertical-align: middle;
+  margin-top: 0.5rem;
+  font-size: small;
+}

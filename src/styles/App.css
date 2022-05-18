@@ -75,3 +75,11 @@
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
+
+.platform-buttons {
+  margin-top: 5px;
+}
+
+.play-reason-buttons {
+  margin-top: 5px;
+}

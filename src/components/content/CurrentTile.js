@@ -13,9 +13,14 @@ export default function CurrentTile(props) {
       <div className="platform">
         {props.game.platform}
       </div>
-      <button className="tile-button">Review / Finish</button>
-      <button className="tile-button" onClick={() => {props.abandon(props.game)}}>Abandon</button>
-      <button className="tile-button" onClick={() => {props.playLater(props.game)}}>Play Later</button>
+      <div className="reason-badge">
+        {props.game.playReason}
+      </div>
+      <div className="action-buttons">
+        <button className="tile-button">Review / Finish</button>
+        <button className="tile-button" onClick={() => {props.abandon(props.game)}}>Abandon</button>
+        <button className="tile-button" onClick={() => {props.playLater(props.game)}}>Play Later</button>
+      </div>
     </div>
   )
 }

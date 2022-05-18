@@ -14,7 +14,10 @@ export default function CompletedTile(props) {
       <div className="platform">
         {props.game.platform}
       </div>
-      <div className="completion-status">
+      <div className="reason-badge">
+        {props.game.playReason}
+      </div>
+      <div className="completion-status-abandoned">
         {props.game.completionStatus}
       </div>
     </div>
