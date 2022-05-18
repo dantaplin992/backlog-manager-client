@@ -21,8 +21,8 @@ export default function NewGameForm(props) {
       name: props.game.name,
       released: props.game.released,
       platform: platform,
-      started: false,
-      completed: false,
+      playReason: null,
+      completionStatus: null,
     }
     props.addGameToBacklog(newGameObj)
   }

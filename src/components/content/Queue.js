@@ -61,8 +61,6 @@ export default function Queue(props) {
     })
   }
 
-  
-
   function gameTiles() {
     let tiles = [] 
     for (let i in props.games) {
