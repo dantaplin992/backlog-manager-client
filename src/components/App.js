@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react'
 import '../styles/App.css'
 import UserAuth from './userAuth/UserAuth'
-import Content from './content/Content'
 import Banner from './Banner'
+import Backlog from './content/Backlog'
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const firstRender = useRef(true)
+  document.body.style.overflow = "hidden"
   useEffect(() => {
     firstRender.current = false
   }, [])
 
-  let displayComponent = currentUser ? <Content currentUser={currentUser} logoutFunction={nullUser} /> : <UserAuth loginFunction={loginUser} />
+  let displayComponent = currentUser ? <Backlog user={currentUser} /> : <UserAuth loginFunction={loginUser} />
 
   function loginUser(user) {
     setCurrentUser(user)
@@ -27,7 +28,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner user={currentUser}/>
       <div className="login-button">
       </div>
       {displayComponent}

@@ -78,7 +78,6 @@ export default function Queue(props) {
 
   return (
     <div className="Queue">
-      <h2>Queued Games</h2>
       {gameTiles()}
       {selected ? <NewGameForm game={selected} addGameToBacklog={addGameToBacklog}/> : <div></div>}
       <GameSearch selectGame={addSelected} />

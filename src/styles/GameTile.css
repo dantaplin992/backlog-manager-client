@@ -87,6 +87,19 @@
   display: inline-block;
 }
 
+.abandoned-tile {
+  padding: 1rem;
+  background-color: rgb(45, 135, 22);
+  margin-bottom: 1rem;
+  color: rgb(223, 223, 223);
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  border: none;
+  border-radius: 17px;
+  box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
+}
+
 .title {
   font-size: large;
   font-weight: 500;

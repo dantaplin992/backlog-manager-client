@@ -20,7 +20,6 @@ export default function Completed(props) {
 
   return (
     <div className="Completed">
-      <h2>Completed</h2>
       {gameTiles()}
     </div>
   )

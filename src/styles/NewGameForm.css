@@ -1,9 +1,11 @@
 .NewGameForm {
 background-color: white;
 padding: 5px;
-padding-top: 1rem;
-padding-bottom: 1rem;
+padding-top: 2rem;
+padding-bottom: 2rem;
 box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.02);
+width: 90%;
+margin: auto;
 }
 
 .platform-buttons {
@@ -41,4 +43,28 @@ box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.02);
   border: none;
   border-radius: 4px;
   margin-right: 2px;
+}
+
+.form-title {
+  font-weight: 300;
+}
+
+.form-date {
+  font-weight: 200;
+  font-size: small;
+}
+
+.add-game-button {
+  font-weight: 200;
+  font-size: small;
+  margin-top: 1rem;
+  background-color: rgb(76, 22, 135);
+  color: whitesmoke;
+  border: none;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+.add-game-button:hover {
+  background-color: rgb(109, 54, 169);
 }

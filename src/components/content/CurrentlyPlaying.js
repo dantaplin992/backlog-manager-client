@@ -70,7 +70,6 @@ export default function CurrentlyPlaying(props) {
 
   return (
     <div className="CurrentlyPlaying">
-      <h2>Currently Playing</h2>
       {gameTiles()}
     </div>
   )

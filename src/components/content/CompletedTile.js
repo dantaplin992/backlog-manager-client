@@ -4,7 +4,7 @@ import '../../styles/GameTile.css'
 export default function CompletedTile(props) {
 
   return (
-    <div className="completed-tile">
+    <div className={props.game.completionStatus === "Completed" ? "completed-tile" : "abandoned-tile"}>
       <div className="title">
         {props.game.name}
       </div>
