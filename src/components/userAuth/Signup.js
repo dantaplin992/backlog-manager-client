@@ -52,7 +52,8 @@ export default function Signup(props) {
   function validateCredentials() {
     if (!newUsername || !newEmail || !newPassword) return { valid: false, message: 'You cannot sign up with empty credentials!' }
     if (!usernameIsUnique) return { valid: false, message: 'Someone with that username already exists' }
-    if (!newEmail.match(/\@/) || !newEmail.match(/\.[a-z]/)) return { valid: false, message: 'please enter a valid email address'}
+    if (newUsername.match(/\s/)) return { valid: false, message: 'Usernames cannot contain spaces'}
+    if (!newEmail.match(/\@/) || !newEmail.match(/\.[a-z]/)) return { valid: false, message: 'Please enter a valid email address'}
     if (newPassword.length < 6 || !newPassword.match(/[$&+,:;=?@#|'<>.^*()%!-]/gi) || !newPassword.match(/[a-z]/gi) || !newPassword.match(/[0-9]/)) return { 
       valid: false, message: 'Passwords must be > 6 characters and contain at least 1 letter, 1 digit and 1 special character' 
     }
