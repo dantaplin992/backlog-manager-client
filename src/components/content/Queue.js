@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import equal from 'fast-deep-equal'
 import shortid from 'shortid'
 import NewGameForm from './NewGameForm'
 import GameSearch from './GameSearch'
@@ -14,7 +13,6 @@ export default function Queue(props) {
   }
 
   function actionAlert(message) {
-    let timerInterval
     Swal.fire({
       title: message,
       timer: 1500,
