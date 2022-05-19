@@ -28,36 +28,18 @@ export default function Backlog(props) {
     console.log("Getting games")
   }, [games])
 
-  function addGameToBacklog(newGame) {
-    const sendObj = { userId: props.user._id, game: newGame }
-    const url = `http://localhost:5000/backlog/add`
-    fetch(url, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(sendObj)
-    }).then(() => {
-      getAllGames()
-      console.log("Added to Backlog")
-      setSelected(null)
-    })
-  }
-
   useEffect(() => {
     if (selected) console.log('Selected new game: ' + selected.name)
   }, [selected])
 
   return (
     <div className="Backlog">
-      <h2>{props.user.username}'s Backlog</h2>
       <div className="column-header"><h2>Queued <span className="number-of-items"> ({games.queued ? games.queued.length : ''})</span></h2></div>
       <div className="column-header"><h2>Currently Playing <span className="number-of-items"> ({games.currentlyPlaying ? games.currentlyPlaying.length : ''})</span></h2></div>
       <div className="column-header"><h2>Finished <span className="number-of-items"> ({games.finished ? games.finished.length : ''})</span></h2></div>
       <div className="columns">
-        <Queue games={games.queued} addGameToBacklog={addGameToBacklog} refreshGames={getAllGames} user={props.user} />
-        <CurrentlyPlaying games={games.currentlyPlaying} refreshGames={getAllGames} user={props.user} />
+        <Queue games={games.queued} refreshGames={getAllGames} user={props.user} socketEmit={props.socketEmit}/>
+        <CurrentlyPlaying games={games.currentlyPlaying} refreshGames={getAllGames} user={props.user} socketEmit={props.socketEmit}/>
         <Completed games={games.finished} />
       </div>
     </div>

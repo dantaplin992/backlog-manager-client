@@ -21,7 +21,7 @@ export default function Queue(props) {
   }
 
   function addGameToBacklog(newGame) {
-    const sendObj = { userId: props.user._id, game: newGame }
+    const sendObj = { userId: props.user._id, username: props.user.username, game: newGame }
     const url = `http://localhost:5000/backlog/add`
     fetch(url, {
       method: "POST",
@@ -36,6 +36,7 @@ export default function Queue(props) {
       console.log(message)
       setSelected(null)
       actionAlert(message)
+      props.socketEmit('addedGame', sendObj)
     })
   }
 

@@ -51,7 +51,39 @@
   width: 100%;
   background-color: rgb(42, 6, 53);
   color: whitesmoke;
-  margin-top: -1.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;;
+}
+
+#banner-logout, #banner-right {
+  display: inline-block;
+  width: 33%;
+  vertical-align: middle;
+  margin-bottom: 0.75rem;
+}
+
+#banner-title {
+  display: inline-block;
+  width: 34%;
+  font-size: 32px;
+}
+
+#logout-button {
+  background-color: whitesmoke;
+  border: none;
+  margin-left: 0.5rem;
+  color: rgb(42, 6, 53);
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  transition: all linear 0.1s;
+}
+
+#logout-button:hover {
+  background-color: rgba(233, 233, 233, 0.6);
+  color: whitesmoke;
+  transition: all linear 0.1s;
 }
 
 .columns {
@@ -113,4 +145,26 @@
 ::placeholder {
   color: gray;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content-tab-button-off {
+  background-image: linear-gradient(rgb(67, 45, 73), rgb(42, 6, 53));
+  width: 50%;
+  height: 2.5rem;
+  border: none;
+  color: whitesmoke;
+  font-size: larger;
+}
+
+.content-tab-button-off:hover {
+  background-image: linear-gradient(rgb(67, 45, 73), rgb(59, 37, 65));
+}
+
+.content-tab-button-on {
+  background-color: whitesmoke;
+  width: 50%;
+  height: 2.5rem;
+  border: none;
+  color: rgb(69, 37, 78);
+  font-size: larger;
 }
