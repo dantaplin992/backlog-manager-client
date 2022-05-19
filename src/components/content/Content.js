@@ -26,7 +26,7 @@ export default function Content(props) {
 
   useEffect(() => {
     getFeedItems()
-  }, [])
+  }, [feedItems])
 
   function socketConnect() {
     let socket = io('http://localhost:5000')
@@ -52,7 +52,7 @@ export default function Content(props) {
   }
 
   function displayContent() {
-    if (display === 'newsfeed') return <NewsFeed webSocket={webSocket}/>
+    if (display === 'newsfeed') return <NewsFeed webSocket={webSocket} feedItems={feedItems}/>
     return <Backlog user={props.currentUser} socketEmit={webSocketEmit}/>
   }
 
