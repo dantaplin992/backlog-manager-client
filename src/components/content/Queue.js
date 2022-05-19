@@ -59,7 +59,7 @@ export default function Queue(props) {
   }
 
   function startPlaying(gameObj) {
-    const sendObj = { userId: props.user._id, game: gameObj }
+    const sendObj = { userId: props.user._id, username:props.user.username, game: gameObj }
     const url = `http://localhost:5000/backlog/start_playing`
     fetch(url, {
       method: "POST",
@@ -73,6 +73,7 @@ export default function Queue(props) {
       let message = "Started playing " + gameObj.name + "!"
       console.log(message)
       actionAlert(message)
+      props.socketEmit('startedPlaying', sendObj)
     })
   }
 

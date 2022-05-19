@@ -33,7 +33,7 @@ export default function CurrentlyPlaying(props) {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('You Stopped Playing ' + gameObj.name)
-        const sendObj = { userId: props.user._id, game: gameObj }
+        const sendObj = { userId: props.user._id, username: props.user.username, game: gameObj }
         const url = `http://localhost:5000/backlog/abandon`
         fetch(url, {
           method: "POST",
@@ -45,13 +45,14 @@ export default function CurrentlyPlaying(props) {
         }).then(() => {
           props.refreshGames()
           console.log("Abandoned " + gameObj.name + " playthrough")
+          props.socketEmit('abandonedGame', sendObj)
         })
       }
     })
   }
 
   function review(gameObj, reviewText) {
-    const sendObj = { userId: props.user._id, game: gameObj, review: reviewText }
+    const sendObj = { userId: props.user._id, username: props.user.username, game: gameObj, review: reviewText }
     const url = `http://localhost:5000/backlog/review`
     fetch(url, {
       method: "POST",
@@ -67,6 +68,7 @@ export default function CurrentlyPlaying(props) {
         title: "Completed " + gameObj.name,
         icon: "success"
       })
+      props.socketEmit('review', sendObj)
     })
   }
 

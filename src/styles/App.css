@@ -168,3 +168,12 @@
   color: rgb(69, 37, 78);
   font-size: larger;
 }
+
+.NewsFeed {
+    overflow: scroll;
+    height: 85vh;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}

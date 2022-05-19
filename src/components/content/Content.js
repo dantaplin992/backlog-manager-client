@@ -70,7 +70,7 @@ export default function Content(props) {
     <div className="Content">
       <div id="display-buttons">
         <button className={display === 'backlog' ? "content-tab-button-on" : "content-tab-button-off"} onClick={changeDisplay}>Backlog</button>
-        <button className={display === 'newsfeed' ? "content-tab-button-on" : "content-tab-button-off"} onClick={changeDisplay}>News Feed</button>
+        <button className={display === 'newsfeed' ? "content-tab-button-on" : "content-tab-button-off"} onClick={changeDisplay}>Activity Feed</button>
       </div>
         {displayContent()}
     </div>
