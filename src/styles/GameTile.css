@@ -9,6 +9,7 @@
   border: none;
   border-radius: 17px;
   box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
+  transition: all .2s linear;
 }
 
 .tile-button {
@@ -45,10 +46,11 @@
   border: none;
   border-radius: 17px;
   box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
+  transition: all .2s linear;
 }
 
 .current-tile:hover {
-  background-image: linear-gradient(goldenrod, rgb(167, 111, 14));
+  background-image: linear-gradient(goldenrod, rgb(188, 100, 33));
   padding-bottom: 2rem;
   padding-top: 1rem;
   transition: all .2s linear;
@@ -69,6 +71,7 @@
   border: none;
   border-radius: 17px;
   box-shadow: 0px 0px 8px 3px rgb(207, 207, 207);
+  transition: all .2s linear;
 }
 
 .completed-tile:hover {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../styles/UserAuth.css'
+const Swal = require('sweetalert2')
 
 export default function Login(props) {
   const [usernameInput, setUsernameInput] = useState('')
@@ -22,7 +23,7 @@ export default function Login(props) {
         console.log(data.user)
         props.loginFunction(data.user)
       } else {
-        alert("The credentials you entered are incorrect")
+        Swal.fire("The credentials you entered are incorrect! :(")
       }
     })
   }

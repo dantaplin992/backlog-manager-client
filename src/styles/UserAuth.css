@@ -11,8 +11,7 @@
 }
 
 .login-input {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   height: 1.5rem;
   width: 50%;
   border: 1px solid lightgrey;
@@ -40,6 +39,27 @@
   border: none;
 }
 
+#show-hide-password {
+  width: 55%;
+  margin: auto;
+  text-align: right !important;
+}
+
+#show-hide-password button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 12px !important;
+}
+
+#show-hide-password button:hover {
+  color: gray;
+  
+}
+
 .auth-link:hover {
   color: grey;
+}
+
+input::placeholder {
+  color: lightgrey !important;
 }

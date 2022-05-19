@@ -109,3 +109,8 @@
   font-weight: 300;
   color: grey;
 }
+
+::placeholder {
+  color: gray;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

@@ -4,12 +4,22 @@ import shortid from 'shortid'
 import NewGameForm from './NewGameForm'
 import GameSearch from './GameSearch'
 import GameTile from './GameTile'
+const Swal = require ('sweetalert2')
 
 export default function Queue(props) {
   const [selected, setSelected] = useState(null)
 
   function addSelected(selected) {
     setSelected(selected)
+  }
+
+  function actionAlert(message) {
+    let timerInterval
+    Swal.fire({
+      title: message,
+      timer: 1500,
+      timerProgressBar: true,
+    })
   }
 
   function addGameToBacklog(newGame) {
@@ -24,8 +34,10 @@ export default function Queue(props) {
       body: JSON.stringify(sendObj)
     }).then(() => {
       props.refreshGames()
-      console.log("Added to Backlog")
+      let message = "Added " + newGame.name + " To Your Backlog!"
+      console.log(message)
       setSelected(null)
+      actionAlert(message)
     })
   }
 
@@ -41,7 +53,9 @@ export default function Queue(props) {
       body: JSON.stringify(sendObj)
     }).then(() => {
       props.refreshGames()
-      console.log("Removed From Backlog")
+      let message = "Removed " + gameObj.name + " From Your Backlog!"
+      console.log(message)
+      actionAlert(message)
     })
   }
 
@@ -57,7 +71,9 @@ export default function Queue(props) {
       body: JSON.stringify(sendObj)
     }).then(() => {
       props.refreshGames()
-      console.log("Started playing " + gameObj.name)
+      let message = "Started playing " + gameObj.name + "!"
+      console.log(message)
+      actionAlert(message)
     })
   }
 
