@@ -7,7 +7,11 @@
   padding: 2rem;
   border: 1px solid rgba(186, 186, 186, 0.618);
   border-radius: 8px;
+  transition: all linear 0.1s;
+}
+#login-form:hover, #sign-up-form:hover {
   box-shadow: 0px 0px 8px 0.5px rgba(119, 119, 119, 0.2);
+  transition: all linear 0.2s;
 }
 
 .login-input {

@@ -6,21 +6,25 @@ export default function Completed(props) {
 
   function gameTiles() {
     console.log(props.games)
-    let tiles = [] 
-    for (let i in props.games) {
-      tiles.unshift(
-        <CompletedTile 
-          game={props.games[i]} 
-          key={shortid.generate()}
-        />
-      )
+    if (props.games.length > 0) {
+      let tiles = [] 
+      for (let i in props.games) {
+        tiles.unshift(
+          <CompletedTile 
+            game={props.games[i]} 
+            key={shortid.generate()}
+          />
+        )
+      }
+      return tiles
+    } else {
+      return <span className="number-of-items">You haven't finished any games yet</span>
     }
-    return tiles
   }
 
   return (
     <div className="Completed">
-      {gameTiles()}
+      {props.games ? gameTiles() : ''}
     </div>
   )
 }

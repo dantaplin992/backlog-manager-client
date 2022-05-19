@@ -97,12 +97,6 @@ export default function Queue(props) {
     
   }
 
-  function noGamesMessage() {
-    return (
-      <span><strong>Nothing yet - add some games to get started!</strong></span>
-    )
-  }
-
   return (
     <div className="Queue">
       {props.games ? gameTiles() : ''}
