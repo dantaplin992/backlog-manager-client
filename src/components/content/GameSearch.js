@@ -40,7 +40,7 @@ export default function GameSearch(props) {
         <h3>Add Game</h3>
       </div>
       <div>
-        <input type="text" id="rawg-search" onChange={handleGameSearch} value={gameSearch} placeholder="Search games"/>
+        <input type="text" id="rawg-search" onChange={handleGameSearch} value={gameSearch} placeholder="Search games" autoComplete='off'/>
       </div>
       <div>
         {resultTiles()}

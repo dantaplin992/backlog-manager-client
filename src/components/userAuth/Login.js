@@ -24,6 +24,7 @@ export default function Login(props) {
         props.loginFunction(data.user)
       } else {
         Swal.fire("The credentials you entered are incorrect! :(")
+        setPasswordInput('')
       }
     })
   }

@@ -63,3 +63,16 @@
 input::placeholder {
   color: lightgrey !important;
 }
+
+.username-message-unique, .username-message-taken {
+  font-size: small;
+  font-weight: 300;
+}
+
+.username-message-unique {
+  color:green;
+}
+
+.username-message-taken {
+  color: red;
+}
