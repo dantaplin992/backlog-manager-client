@@ -22,7 +22,7 @@ export default function Queue(props) {
 
   function addGameToBacklog(newGame) {
     const sendObj = { userId: props.user._id, username: props.user.username, game: newGame }
-    const url = `http://localhost:5000/backlog/add`
+    const url = `https://backlog-manager-api.herokuapp.com/backlog/add`
     fetch(url, {
       method: "POST",
       mode: "cors",
@@ -42,7 +42,7 @@ export default function Queue(props) {
 
   function removeFromBacklog(gameObj) {
     const sendObj = { userId: props.user._id, game: gameObj }
-    const url = `http://localhost:5000/backlog/remove`
+    const url = `https://backlog-manager-api.herokuapp.com/backlog/remove`
     fetch(url, {
       method: "POST",
       mode: "cors",
@@ -60,7 +60,7 @@ export default function Queue(props) {
 
   function startPlaying(gameObj) {
     const sendObj = { userId: props.user._id, username:props.user.username, game: gameObj }
-    const url = `http://localhost:5000/backlog/start_playing`
+    const url = `https://backlog-manager-api.herokuapp.com/backlog/start_playing`
     fetch(url, {
       method: "POST",
       mode: "cors",
