@@ -7,8 +7,10 @@ export default function FeedTile(props) {
   function message() {
     if (props.item.action === 'add') return <span><strong>{props.item.username}</strong> added <strong>{props.item.gameTitle}</strong> to their backlog</span>
     if (props.item.action === 'abandon') return <span><strong>{props.item.username}</strong> stopped playing <strong>{props.item.gameTitle}</strong></span>
-    if (props.item.action === 'abandon') return <span><strong>{props.item.username}</strong> stopped playing <strong>{props.item.gameTitle}</strong></span>
     if (props.item.action === 'start') return <span><strong>{props.item.username}</strong> started playing <strong>{props.item.gameTitle}</strong></span>
+    if (props.item.action === 'start-first') return <span><strong>{props.item.username}</strong> started their first playthrough of <strong>{props.item.gameTitle}</strong></span>
+    if (props.item.action === 'start-speed') return <span><strong>{props.item.username}</strong> is now speedrunning <strong>{props.item.gameTitle}</strong></span>
+    if (props.item.action === 'start-trophy') return <span><strong>{props.item.username}</strong> started achievement-hunting in <strong>{props.item.gameTitle}</strong></span>
     if (props.item.action === 'review') return <span><strong>{props.item.username}</strong> completed <strong>{props.item.gameTitle}</strong></span>
     return ''
   }
