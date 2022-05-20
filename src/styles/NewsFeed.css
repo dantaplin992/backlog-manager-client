@@ -16,3 +16,34 @@
   font-size: small;
   font-weight: 300;
 }
+
+.like-button {
+  background-image: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/toss-face/330/thumbs-up_1f44d.png");
+  height: 2rem;
+  width: 2rem;
+}
+
+.like-button-overlay {
+  background-color: rgba(0, 0, 0, 0.106);
+  z-index: 2;
+}
+
+.likes-count {
+  font-size: small;
+  font-weight: 300;
+  color: gray;
+  width: 1rem;
+  transition: all linear 0.2s;
+}
+
+.likes-count-active {
+  font-size: small;
+  font-weight: 300;
+  color: gray;
+  background-color: rgb(39, 39, 143);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  border-radius: 2px;
+  color: whitesmoke;
+  transition: all linear 0.2s;
+}

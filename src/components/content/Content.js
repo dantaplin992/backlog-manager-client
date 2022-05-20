@@ -52,7 +52,7 @@ export default function Content(props) {
   }
 
   function displayContent() {
-    if (display === 'newsfeed') return <NewsFeed webSocket={webSocket} feedItems={feedItems}/>
+    if (display === 'newsfeed') return <NewsFeed user={props.currentUser} socketEmit={webSocketEmit} feedItems={feedItems} refreshFeed={getFeedItems}/>
     return <Backlog user={props.currentUser} socketEmit={webSocketEmit}/>
   }
 
