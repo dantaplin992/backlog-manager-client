@@ -42,6 +42,11 @@
   to {opacity: 100%;}
 }
 
+@keyframes expand-down {
+  from {height: 0vh;}
+  to {height: 85vh;}
+}
+
 .Content {
   animation-name: fade-in;
   animation-duration: 0.5s;
@@ -94,6 +99,8 @@
     width: 100%;
     backface-visibility: hidden;
     will-change: overflow;
+    animation-name: expand-down;
+    animation-duration: 0.5s;
 }
 
 .Queue, .Completed, .CurrentlyPlaying {
@@ -147,13 +154,25 @@
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+@keyframes expand {
+  from {width: 45%;}
+  to {width: 55%}
+}
+
+@keyframes contract {
+  from {width: 55%;}
+  to {width: 45%}
+}
+
 .content-tab-button-off {
   background-image: linear-gradient(rgb(67, 45, 73), rgb(42, 6, 53));
-  width: 50%;
+  width: 45%;
   height: 2.5rem;
   border: none;
   color: whitesmoke;
   font-size: larger;
+  animation-name: contract;
+  animation-duration: 0.5s;
 }
 
 .content-tab-button-off:hover {
@@ -162,11 +181,13 @@
 
 .content-tab-button-on {
   background-color: whitesmoke;
-  width: 50%;
+  width: 55%;
   height: 2.5rem;
   border: none;
   color: rgb(69, 37, 78);
   font-size: larger;
+  animation-name: expand;
+  animation-duration: 0.5s;
 }
 
 .NewsFeed {
@@ -176,4 +197,6 @@
     width: 100%;
     backface-visibility: hidden;
     will-change: overflow;
+    animation-name: expand-down;
+    animation-duration: 0.5s;
 }
