@@ -19,7 +19,6 @@ export default function Content(props) {
       },
     }).then(response => response.json()
     ).then((data) => {
-      console.log("GOT FEED ITEMS")
       if (!equal(feedItems, data)) setFeedItems(data)
     })
   }

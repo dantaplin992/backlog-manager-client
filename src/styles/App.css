@@ -114,6 +114,10 @@
   margin-bottom: 7rem;
 }
 
+.Queue {
+  margin-bottom: -2rem !important;
+}
+
 .CurrentlyPlaying {
   width: 34% !important;
 }
@@ -199,4 +203,14 @@
     will-change: overflow;
     animation-name: expand-down;
     animation-duration: 0.5s;
+}
+
+.search-results {
+  height: 30rem;
+  overflow: scroll;
+}
+
+.loading{
+  font-weight: 300;
+  color: gray;
 }
