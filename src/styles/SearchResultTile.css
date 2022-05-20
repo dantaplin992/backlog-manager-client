@@ -23,3 +23,22 @@
   margin-top: 0.4rem;
   color: grey;
 }
+
+.result-thumbnail {
+  height: auto;
+  width: 100%;
+}
+
+.result-image, .result-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.result-text {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.result-image {
+  width: 40%;
+}

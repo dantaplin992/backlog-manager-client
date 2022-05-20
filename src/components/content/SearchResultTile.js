@@ -22,10 +22,16 @@ export default function SearchResultTile(props) {
   return (
     <div className="SearchResultTile">
       <button className="result-button" onClick={() => {props.selectOption(props.result)}}>
-        {props.result.name}<span className="release-date"> ({displayReleaseDate()})</span>
-        <div className="platforms">
-          {displayPlatforms()}
+      <div className="result-image">
+          <img className="result-thumbnail" src={props.result.background_image}></img>
         </div>
+        <div className="result-text">
+          {props.result.name}<span className="release-date"> ({displayReleaseDate()})</span>
+          <div className="platforms">
+            {displayPlatforms()}
+          </div>
+        </div>
+       
       </button>
     </div>
   )
