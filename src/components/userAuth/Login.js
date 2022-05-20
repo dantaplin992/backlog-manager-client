@@ -10,7 +10,7 @@ export default function Login(props) {
 
   function handleSubmit() {
     const reqBody = { username: usernameInput, password: passwordInput}
-    const url = 'http://localhost:5000/sessions/new'
+    const url = 'https://backlog-manager-api.herokuapp.com/sessions/new'
     fetch(url, {
       method: "POST",
       mode: "cors",

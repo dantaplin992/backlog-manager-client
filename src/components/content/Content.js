@@ -10,7 +10,7 @@ export default function Content(props) {
   const [feedItems, setFeedItems] = useState([])
 
   function getFeedItems() {
-    const url = 'http://localhost:5000/news_feed'
+    const url = 'https://backlog-manager-api.herokuapp.com/news_feed'
     fetch(url, {
       method: "GET",
       mode: "cors",
@@ -29,7 +29,7 @@ export default function Content(props) {
   }, [feedItems])
 
   function socketConnect() {
-    let socket = io('http://localhost:5000')
+    let socket = io('https://backlog-manager-api.herokuapp.com')
     socket.on('handshake', (msg) => {
       console.log(msg)
     })
