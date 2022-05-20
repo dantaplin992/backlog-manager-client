@@ -25,7 +25,7 @@ export default function Signup(props) {
 
   function checkNameIsUnique(name) {
     if (name) {
-      const url = `http://localhost:5000/users/find?username=${name}`
+      const url = `https://backlog-manager-api.herokuapp.com/users/find?username=${name}`
       fetch(url, {
         method: "GET",
         mode: "cors",
@@ -73,7 +73,7 @@ export default function Signup(props) {
     } else {
       const newUser = { username: newUsername, password: newPassword, email: newEmail }
       console.log(newUser)
-      const url = "http://localhost:5000/users/new"
+      const url = "https://backlog-manager-api.herokuapp.com/users/new"
       fetch(url, {
         method: "POST",
         mode: "cors",

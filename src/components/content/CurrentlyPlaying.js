@@ -7,7 +7,7 @@ export default function CurrentlyPlaying(props) {
 
   function playLater(gameObj) {
     const sendObj = { userId: props.user._id, game: gameObj }
-    const url = `http://localhost:5000/backlog/play_later`
+    const url = `https://backlog-manager-api.herokuapp.com/backlog/play_later`
     fetch(url, {
       method: "POST",
       mode: "cors",
@@ -34,7 +34,7 @@ export default function CurrentlyPlaying(props) {
       if (result.isConfirmed) {
         Swal.fire('You Stopped Playing ' + gameObj.name)
         const sendObj = { userId: props.user._id, username: props.user.username, game: gameObj }
-        const url = `http://localhost:5000/backlog/abandon`
+        const url = `https://backlog-manager-api.herokuapp.com/backlog/abandon`
         fetch(url, {
           method: "POST",
           mode: "cors",
@@ -53,7 +53,7 @@ export default function CurrentlyPlaying(props) {
 
   function review(gameObj, reviewText) {
     const sendObj = { userId: props.user._id, username: props.user.username, game: gameObj, review: reviewText }
-    const url = `http://localhost:5000/backlog/review`
+    const url = `https://backlog-manager-api.herokuapp.com/backlog/review`
     fetch(url, {
       method: "POST",
       mode: "cors",

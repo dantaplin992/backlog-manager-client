@@ -9,7 +9,7 @@ export default function Backlog(props) {
   const [selected, setSelected] = useState(null)
 
   function getAllGames() {
-    const url = `http://localhost:5000/backlog/all?userid=${props.user._id}`
+    const url = `https://backlog-manager-api.herokuapp.com/backlog/all?userid=${props.user._id}`
     fetch(url, {
       method: "GET",
       mode: "cors",
