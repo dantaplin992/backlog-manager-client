@@ -47,3 +47,8 @@
   color: whitesmoke;
   transition: all linear 0.2s;
 }
+
+.review-body {
+  color: rgba(0, 0, 0, 0.579);
+  font-weight: 300;
+}

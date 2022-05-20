@@ -13,6 +13,11 @@ export default function FeedTile(props) {
     return ''
   }
 
+  function reviewMessage() {
+    if (props.item.action === 'review') return <p className="review-body">"{props.item.review}"</p>
+    return ''
+  }
+
   function likeButton() {
     if (props.item.likes.includes(props.user.username)) {
       props.socketEmit('removeLike', { username: props.user.username, itemId: props.item._id })
@@ -26,6 +31,7 @@ export default function FeedTile(props) {
     <div className="FeedTile">
       <div className="feed-message">{message()}</div>
       <div className="feed-date">{formatDistance(new Date(props.item.timeStamp), new Date())} ago</div>
+      <div className="review-container">{reviewMessage()}</div>
       <div className="like-button-container">
         <input
        className="like-button" 
