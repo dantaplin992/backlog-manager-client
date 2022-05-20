@@ -1,0 +1,54 @@
+.FeedTile {
+  margin: auto;
+  margin-bottom: 1rem;
+  background-color: white;
+  width: 40%;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 3px rgba(207, 207, 207, 0.1);
+}
+
+.feed-message {
+  font-size: large;
+}
+
+.feed-date {
+  font-size: small;
+  font-weight: 300;
+}
+
+.like-button {
+  background-image: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/toss-face/330/thumbs-up_1f44d.png");
+  height: 2rem;
+  width: 2rem;
+}
+
+.like-button-overlay {
+  background-color: rgba(0, 0, 0, 0.106);
+  z-index: 2;
+}
+
+.likes-count {
+  font-size: small;
+  font-weight: 300;
+  color: gray;
+  width: 1rem;
+  transition: all linear 0.2s;
+}
+
+.likes-count-active {
+  font-size: small;
+  font-weight: 300;
+  color: gray;
+  background-color: rgb(39, 39, 143);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  border-radius: 2px;
+  color: whitesmoke;
+  transition: all linear 0.2s;
+}
+
+.review-body {
+  color: rgba(0, 0, 0, 0.579);
+  font-weight: 300;
+}
