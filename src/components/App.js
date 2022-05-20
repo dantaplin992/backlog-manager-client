@@ -23,6 +23,7 @@ export default function App() {
   }
 
   function nullUser() {
+    localStorage.removeItem('user')
     setCurrentUser(null)
   }
 
@@ -34,7 +35,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Banner user={currentUser}/>
+      <Banner user={currentUser} nullUser={nullUser}/>
       {displayComponent}
     </div>
   )
